@@ -1,4 +1,54 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
 @import "jekyll-theme-prologue";
+
+/*Make text darker and more readable in article pages*/
+article.shade-two {
+    .container {
+        max-width: 85%;
+        text-align: justify;
+        h1, h2 {
+            color: #333333;
+        }
+        p, li.span {
+            color: #444444;
+        }
+    }
+}
+
+/*Copy code button formatting*/
+.copy-code-container {
+    display: flex;
+    padding: 1em;
+    background: #44475a;
+}
+
+.code-title {
+    background: #44475a;
+    color: #f8f8f2;
+}
+
+.copy-code-button {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #282a36;
+    color: #f8f8f2;
+    padding: 0.4em 0.5em;
+    border-radius: 5px;
+
+    &::before {
+        content: "Copy";
+    }
+
+    // This class will be toggled via JavaScript
+    &.copied {
+        &::before {
+            content: "Copied!";
+        }
+    }
+}
